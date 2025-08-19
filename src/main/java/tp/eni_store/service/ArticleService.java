@@ -42,7 +42,7 @@ public class ArticleService {
 
     public ServiceResponse<Article> save(Article article){
         List<Article> articles = articleDAO.getArticles();
-        Article match = articles.get(article.id);
+        Article match = articleDAO.getArticle(article.id);
 
         if(match != null) {
             articles.set(match.id, article);
